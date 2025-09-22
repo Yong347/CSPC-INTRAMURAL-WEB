@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSPC Intramurals 2024</title>
+    <meta name="description" content="Camarines Sur Polytechnic Colleges Intramurals Competition 2024 - Live standings, schedules, and team information" />
+    <meta name="author" content="CSPC Intramurals" />
+
+    <meta property="og:title" content="CSPC Intramurals 2024" />
+    <meta property="og:description" content="Camarines Sur Polytechnic Colleges Intramurals Competition 2024 - Live standings, schedules, and team information" />
+    <meta property="og:type" content="website" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="loading-content">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png/1200px-Camarines_Sur_Polytechnic_Colleges_Logo.png" alt="CSPC Logo" class="loading-logo">
+                <p class="loading-text">Loading CSPC Intramurals...</p>
+            </div>
+        </div>
+
+        <!-- Auth Screens -->
+        <div id="auth-screens">
+            <!-- Login Screen -->
+            <div id="login-screen" class="auth-container">
+                <div class="auth-background"></div>
+                <div class="auth-card">
+                    <div class="auth-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png/1200px-Camarines_Sur_Polytechnic_Colleges_Logo.png" alt="CSPC Logo" class="logo-image">
+                    </div>
+
+                    <h1 class="auth-title">Welcome Back</h1>
+
+                    <form id="login-form" class="auth-form">
+                        <div class="input-group">
+                            <input type="text" id="login-username" class="sports-input" placeholder="Username" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="password" id="login-password" class="sports-input" placeholder="Password" required>
+                        </div>
+
+                        <div id="login-error" class="error-message hidden"></div>
+
+                        <button type="submit" class="btn-primary">
+                <span class="btn-text">Login</span>
+                <span class="btn-loading hidden">Logging in...</span>
+              </button>
+
+                        <button type="button" class="btn-secondary" onclick="switchToRegister()">
+                Don't have an account? Register
+              </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Register Screen -->
+            <div id="register-screen" class="auth-container hidden">
+                <div class="auth-background"></div>
+                <div class="auth-card">
+                    <div class="auth-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png/1200px-Camarines_Sur_Polytechnic_Colleges_Logo.png" alt="CSPC Logo" class="logo-image">
+                    </div>
+
+                    <h1 class="auth-title">Create Account</h1>
+
+                    <form id="register-form" class="auth-form">
+                        <div class="input-group">
+                            <input type="email" id="register-email" class="sports-input" placeholder="Enter your Gmail" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="password" id="register-password" class="sports-input" placeholder="Password" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="password" id="register-confirm-password" class="sports-input" placeholder="Confirm Password" required>
+                        </div>
+
+                        <div id="register-error" class="error-message hidden"></div>
+                        <div id="register-success" class="success-message hidden"></div>
+
+                        <button type="submit" class="btn-primary">
+                <span class="btn-text">Create Account</span>
+                <span class="btn-loading hidden">Creating Account...</span>
+              </button>
+
+                        <button type="button" class="btn-secondary" onclick="switchToLogin()">
+                Back to Login
+              </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App (Dashboard) -->
+        <div id="main-app" class="main-app hidden">
+            <!-- Header -->
+            <header class="app-header">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Camarines_Sur_Polytechnic_Colleges_Logo.png/1200px-Camarines_Sur_Polytechnic_Colleges_Logo.png" alt="CSPC Logo" class="header-logo">
+                <div class="header-text">
+                    <h1 class="header-title">CSPC Intramurals</h1>
+                    <p class="header-subtitle">Sports Competition 2024</p>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main id="content" class="main-content">
+                <div id="home-tab" class="tab-content active">
+                    <!-- Slideshow -->
+                    <!-- Slideshow -->
+                    <div class="slideshow-container">
+                        <div class="slideshow" id="slideshow">
+                            <!-- Slide 1: Opening Video -->
+                            <div class="slide active">
+                                <video id="openingVideo" autoplay muted loop class="slide-image">
+        <source src="asset/opening.mp4" type="video/mp4">
+      </video>
+                                <button id="soundBtn" class="sound-toggle">🔇 Unmute</button>
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Opening Ceremony</h3>
+                                    <p class="slide-description">Welcome to CSPC Intramurals 2024</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2: Basketball -->
+                            <div class="slide">
+                                <img src="src/assets/basketball-slide.jpg" alt="Basketball" class="slide-image">
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Basketball</h3>
+                                    <p class="slide-description">Shoot for the stars</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3: Badminton -->
+                            <div class="slide">
+                                <img src="src/assets/badminton-slide.jpg" alt="Badminton" class="slide-image">
+                                <div class="slide-overlay"></div>
+                                <div class="slide-content">
+                                    <h3 class="slide-title">Badminton</h3>
+                                    <p class="slide-description">Smash your opponents</p>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+                    <!-- Upcoming Events -->
+                    <div class="section">
+                        <h2 class="section-title">UPCOMING</h2>
+                        <div class="horizontal-scroll" id="upcoming-events"></div>
+                    </div>
+
+                    <!-- Last Year Highlights -->
+                    <div class="section">
+                        <h2 class="section-title">LAST YEAR</h2>
+                        <div class="horizontal-scroll" id="last-year-highlights"></div>
+                    </div>
+                </div>
+
+                <!-- Standings Tab -->
+                <div id="standings-tab" class="tab-content">
+                    <div class="tab-header">
+                        <h1 class="tab-main-title">Intramurals Team Standings 2024</h1>
+                        <p class="tab-subtitle">As of <span class="highlight">October 19, 2024</span></p>
+                    </div>
+
+                    <div class="standings-table" id="standings-table"></div>
+
+                    <div class="stats-grid" id="standings-stats"></div>
+                </div>
+
+                <!-- Teams Tab -->
+                <div id="teams-tab" class="tab-content">
+                    <div class="tab-header">
+                        <h1 class="tab-main-title">Team Information</h1>
+                        <p class="tab-subtitle">Meet the competing colleges</p>
+                    </div>
+
+                    <div class="teams-list" id="teams-list"></div>
+
+                    <div class="stats-grid" id="teams-stats"></div>
+                </div>
+
+                <!-- Schedule Tab -->
+                <div id="schedule-tab" class="tab-content">
+                    <div class="tab-header">
+                        <h1 class="tab-main-title">Game Schedule</h1>
+                        <p class="tab-subtitle">as of <span class="highlight">October 19, 2024</span></p>
+                    </div>
+
+                    <div class="schedule-section">
+                        <h2 class="schedule-section-title">
+                            <i class="fas fa-calendar text-blue-400"></i> Upcoming Games
+                        </h2>
+                        <div class="schedule-list" id="upcoming-games"></div>
+                    </div>
+
+                    <div class="schedule-section">
+                        <h2 class="schedule-section-title">
+                            <i class="fas fa-calendar text-green-400"></i> Recent Results
+                        </h2>
+                        <div class="schedule-list" id="completed-games"></div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Bottom Navigation -->
+            <nav class="nav-bar">
+                <button class="nav-item active" onclick="switchTab('home-tab')">
+            <i class="fas fa-home nav-icon"></i>
+            <span class="nav-label">Home</span>
+          </button>
+                <button class="nav-item" onclick="switchTab('standings-tab')">
+            <i class="fas fa-trophy nav-icon"></i>
+            <span class="nav-label">Standing</span>
+          </button>
+                <button class="nav-item" onclick="switchTab('teams-tab')">
+            <i class="fas fa-users nav-icon"></i>
+            <span class="nav-label">Teams</span>
+          </button>
+                <button class="nav-item" onclick="switchTab('schedule-tab')">
+            <i class="fas fa-calendar nav-icon"></i>
+            <span class="nav-label">Schedule</span>
+          </button>
+                <button class="nav-item logout-btn" onclick="logout()">
+            <i class="fas fa-sign-out-alt nav-icon"></i>
+            <span class="nav-label">Logout</span>
+          </button>
+            </nav>
+        </div>
+
+        <!-- Toast Container -->
+        <div id="toast-container" class="toast-container"></div>
+    </div>
+
+
+</body>
+
+</html>
